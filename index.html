@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Player Fighting Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="ui-top">
+            <div>
+                <div class="player-name">Player 1</div>
+                <div class="health-container">
+                    <div class="health-bar" id="health1"></div>
+                </div>
+            </div>
+            <div>
+                <div class="player-name">Player 2</div>
+                <div class="health-container">
+                    <div class="health-bar" id="health2"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <div class="fighter player1" id="player1"></div>
+            <div class="fighter player2" id="player2"></div>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <strong>Player 1:</strong><br>
+                A/D - Left/Right | W/S - Up/Down | F - Punch
+            </div>
+            <div class="control-group">
+                <strong>Player 2:</strong><br>
+                K/; - Left/Right | O/L - Up/Down | J - Punch
+            </div>
+        </div>
+
+        <div class="game-over" id="gameOver">
+            <h2 id="winner"></h2>
+            <p>Game Over!</p>
+            <button class="restart-btn" onclick="restartGame()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

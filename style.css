@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.game-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.ui-top {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.health-container {
+    width: 300px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid #fff;
+}
+
+.health-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ff6b6b, #feca57);
+    transition: width 0.3s ease;
+    border-radius: 13px;
+}
+
+.player-name {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.game-area {
+    flex: 1;
+    position: relative;
+    background: linear-gradient(180deg, #87CEEB 0%, #98FB98 100%);
+}
+
+.fighter {
+    position: absolute;
+    bottom: 50px;
+    width: 80px;
+    height: 120px;
+    transition: all 0.1s ease;
+}
+
+.fighter.player1 {
+    left: 100px;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    border-radius: 10px;
+    border: 3px solid #d63031;
+}
+
+.fighter.player2 {
+    right: 100px;
+    background: linear-gradient(45deg, #74b9ff, #a8d8ff);
+    border-radius: 10px;
+    border: 3px solid #0984e3;
+}
+
+.fighter.punching {
+    transform: scale(1.1);
+}
+
+
+.fighter.hit {
+    animation: hit-flash 0.3s ease;
+}
+
+@keyframes hit-flash {
+    0%, 100% { 
+        opacity: 1; 
+        filter: none;
+    }
+    50% { 
+        opacity: 0.3; 
+        filter: hue-rotate(180deg) brightness(1.5);
+    }
+}
+
+.controls {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    color: white;
+    font-size: 14px;
+}
+
+.control-group {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    display: none;
+}
+
+.restart-btn {
+    background: #00b894;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.restart-btn:hover {
+    background: #00a085;
+}
